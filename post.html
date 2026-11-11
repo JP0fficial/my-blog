@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script>
+    // 화면 깜빡임 방지: CSS보다 먼저 테마를 적용
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = saved || (dark ? 'dark' : 'light');
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>My Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="index.html">My Blog</a>
+      <button class="theme-toggle" type="button" aria-label="다크 모드로 전환">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="post">
+      <header class="post-header">
+        <h1 class="post-title"></h1>
+        <div class="post-meta">
+          <time class="post-date"></time>
+          <ul class="tag-list"></ul>
+        </div>
+      </header>
+      <div class="post-content markdown-body"></div>
+    </article>
+    <p class="status-message" hidden></p>
+    <nav class="post-nav">
+      <a href="index.html">← 목록으로</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 My Blog</div>
+  </footer>
+
+  <script type="module" src="js/theme.js"></script>
+  <script type="module" src="js/post.js"></script>
+</body>
+</html>

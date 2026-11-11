@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "localstorage-basics",
+    "title": "localStorage로 브라우저에 값 기억하기",
+    "date": "2026-11-11",
+    "tags": ["TIL", "JavaScript", "localStorage"],
+    "description": "다크 모드 선택을 기억하게 해 준 localStorage의 기본 사용법과 주의할 점을 정리했습니다."
+  },
+  {
+    "slug": "today-i-learned",
+    "title": "오늘 배운 것",
+    "date": "2026-11-10",
+    "tags": ["TIL", "HTML", "CSS", "JavaScript"],
+    "description": "클로드 코드로 블로그를 만들면서 배운 HTML, CSS, JavaScript의 역할을 정리했습니다."
+  },
+  {
+    "slug": "markdown-guide",
+    "title": "마크다운 문법 안내",
+    "date": "2026-11-10",
+    "tags": ["마크다운", "가이드"],
+    "description": "이 블로그에서 쓸 수 있는 마크다운 문법을 한눈에 정리했습니다."
+  },
+  {
+    "slug": "welcome",
+    "title": "블로그를 시작합니다",
+    "date": "2026-11-10",
+    "tags": ["공지", "블로그"],
+    "description": "마크다운으로 글을 쓰는 작은 블로그를 열었습니다. 글을 추가하는 방법을 정리해 둡니다."
+  }
+]

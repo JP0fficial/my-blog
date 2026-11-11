@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script>
+    // 화면 깜빡임 방지: CSS보다 먼저 테마를 적용
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = saved || (dark ? 'dark' : 'light');
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="마크다운으로 쓰는 개인 블로그">
+  <title>My Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="index.html">My Blog</a>
+      <button class="theme-toggle" type="button" aria-label="다크 모드로 전환">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">글 목록</h1>
+    <ul class="post-list" aria-live="polite"></ul>
+    <p class="status-message" hidden></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2026 My Blog</div>
+  </footer>
+
+  <script type="module" src="js/theme.js"></script>
+  <script type="module" src="js/list.js"></script>
+</body>
+</html>
